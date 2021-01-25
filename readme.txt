@@ -10,7 +10,7 @@ webpack-merge - Simplify development/production configuration
 cross-env - Cross platform configuration
 copy-webpack-plugin - Copies individual files or entire directories, which already exist, to the build directory
 
-Babel
+Babel 
 @babel/core - Transpile ES6+ to backwards compatible JavaScript
 @babel/plugin-proposal-class-properties - Use properties directly on a class (an example Babel config)
 @babel/preset-env - Smart defaults for Babel

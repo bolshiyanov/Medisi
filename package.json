@@ -9,7 +9,7 @@
     "public": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint . src config || true"
   },
-  "repository": {
+  "repository": { 
     "type": "git",
     "url": "git+https://github.com/bolshiyanov/webpack-5-boilerplate.git"
   },

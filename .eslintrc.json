@@ -5,7 +5,7 @@
 	"globals": {
 		"console": true,
     "window": true
-    
+     
 	},
 	"parser": "babel-eslint",
 	"parserOptions": {
