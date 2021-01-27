@@ -2,7 +2,7 @@ Element.prototype.appendAfter = function (element) {
     element.parentNode.insertBefore(this, element.nextSibling);
 }
 
-function noop () {}
+function noop() { }
 
 function _creatModalFooter(buttons = []) {
     if (buttons.length === 0) {
@@ -15,7 +15,7 @@ function _creatModalFooter(buttons = []) {
         const $btn = document.createElement('button')
         $btn.textContent = btn.text
         $btn.classList.add('btn')
-        $btn.classList.add(`btn-${btn.type ||'secondary'}`)
+        $btn.classList.add(`btn-${btn.type || 'secondary'}`)
         $btn.onclick = btn.handler || noop
 
         wrap.appendChild($btn)
@@ -67,6 +67,13 @@ $.modal = function (options) {
             setTimeout(() => {
                 $modal.classList.remove('hide')
                 closing = false
+                // Так как при каждом закрытии окна у нас остается модальное окно в dom,
+                // что приводит к утечке памяти, реализуем Hook onClose 
+                // для удаления Vmodal из Dom дерева:
+                if (typeof options.onClose === 'function') {
+                    options.onClose()
+                }
+
             }, ANIMATION_SPEED)
 
         }

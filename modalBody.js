@@ -1,4 +1,4 @@
-const fruits = [
+let fruits = [
     { id: 1, title: 'Яблоки', price: 20, img: 'https://7ogorod.ru/wp-content/uploads/2018/09/bd0db605aee5bfe315ae429559447695_big.jpeg' },
     { id: 2, title: 'Апельсины', price: 30, img: 'https://live.staticflickr.com/65535/49098795842_af0d66f74c_b.jpg' },
     { id: 3, title: 'Манго', price: 40, img: 'https://samui-site.ru/wp-content/uploads/2019/01/ExternalLink_shutterstock_388186099-768x619.jpg' }
@@ -35,30 +35,12 @@ const priceModal = $.modal({
     ]
 })
 
-const confirmModal = $.modal({
-    title: 'Вы уверены',
-    closable: true,
-    width: '400px',
-    footerButtons: [
-        {
-            text: 'Отменить', type: 'secondary', handler() {
-                confirmModal.close()
-            }
-        },
-        {
-            text: 'Удалить', type: 'danger', handler() {
-                confirmModal.close()
-            }
-        }
-    ]
-})
-
 document.addEventListener('click', event => {
     event.preventDefault()
     const btnType = event.target.dataset.btn
     const id = +event.target.dataset.id
     const fruit = fruits.find(f => f.id === id)
-    
+
 
     if (btnType === "price") {
         priceModal.setContent(`
@@ -66,9 +48,18 @@ document.addEventListener('click', event => {
         `)
         priceModal.open()
     } else if (btnType === "remove") {
-        confirmModal.setContent(`
-        <p>Вы удаляете фрукт <strong>${fruit.title}</strong></p>
-        `)
-        confirmModal.open()
+
+        $.confirm({
+            title: 'Вы уверены?',
+            content: `
+            <p>Вы удаляете фрукт <strong>${fruit.title}</strong></p>
+            `
+        }).then(() => {
+            fruits = fruits.filter(f => f.id !== id)
+            render()
+        }).catch(() => {
+            console.log('Cancel')
+        })
+
     }
 })
