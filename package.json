@@ -1,0 +1,23 @@
+{
+  "name": "medisi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bolshiyanov/medisi.git"
+  },
+  "keywords": [
+    "medisi"
+  ],
+  "author": "bolshiaynov <bolshiyanov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bolshiyanov/medisi/issues"
+  },
+  "homepage": "https://github.com/bolshiyanov/medisi#readme",
+  "private":"true"
+}
