@@ -260,18 +260,46 @@ Player.prototype = {
 };
 
 // Trecks for all users.
-var player = new Player([
+// SCRIPT
+const free_tracks = [
     {
         title: 'medisiaudio_5',
         file: 'medisiaudio_5',
         howl: null
-    },
+    }
+]
+const premium_tracks = [
     {
         title: 'medisiaudio_6',
         file: 'medisiaudio_6',
         howl: null
     }
-]);
+]
+const host = "http://localhost:3000";
+var player 
+
+const token_storage = localStorage.getItem('_token');
+if (token_storage){
+    jQuery.ajax({
+        url: host + "/user/get",
+        type: "POST",
+        data: {
+          token: token_storage
+        },
+        success:  (response) => {
+          console.log(response);
+          if (response.expire_date && (new Date(response.expire_date)) >= new Date()){
+            player = new Player(premium_tracks);
+          } else player = new Player(free_tracks);
+        resize();
+        },
+        error: function (response) {
+          console.log(response);
+        }
+      });
+} else {
+    player = new Player(free_tracks); 
+}
 
 // Trecks for PREMIUM users.
 // var player = new Player([

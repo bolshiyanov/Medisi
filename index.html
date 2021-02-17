@@ -5,6 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Medisi</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/index.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap" rel="stylesheet">
@@ -44,12 +47,16 @@
       <!-- здесь будет ПОПАП а пока поля инпута в хардкоде -->
       <div class="dev-popup">
         <h2>Здесь будет попап</h2>
-        <p>Email: <input type="email" name="login"></p>
+        <p>Email: <input type="email" name="login" class="email"></p>
         <h4>До окончания премиум тарифа </br>у вас осталось: ХХХ дней</h4>
-        <p><button type="button" name="show_more">Подписка на год</button></p>
-        <p><button type="button" name="show_more">Подписка на квартал</button></p>
-        <p><button type="button" name="show_more">Подписка на месяц</button></p>
-        <p><button type="button" name="show_more">Подписка на неделю</button></p>
+        <p><button type="button" name="show_more" class="subscribe-button" data-option="3a877d9797edf59">Подписка на
+            год</button></p>
+        <p><button type="button" name="show_more" class="subscribe-button" data-option="e481fd256c12b81">Подписка на
+            квартал</button></p>
+        <p><button type="button" name="show_more" class="subscribe-button" data-option="569abe05dd0e2f9">Подписка на
+            месяц</button></p>
+        <p><button type="button" name="show_more" class="subscribe-button" data-option="f07d58538bf14d2">Подписка на
+            неделю</button></p>
         </br>
         <p><button type="button" name="show_more">Отказаться от подписки</button></p>
       </div>
@@ -101,6 +108,41 @@
   <!-- <div class="card-deck" id="promo"></div> -->
   <script src="plugins/base.js"></script>
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script>
+    const host = "http://localhost:3000";
+    jQuery(".subscribe-button").click(function () {
+      const token_storage = localStorage.getItem('_token');
+      const email_storage = localStorage.getItem('_email');
+      const email = jQuery(".email").val();
+      const data = {
+        email: jQuery(".email").val(),
+        action: jQuery(this).attr("data-option")
+      }
+      if (data.email && data.action) {
+        jQuery.ajax({
+          url: host + "/user/get",
+          type: "POST",
+          data: {
+            email: email_storage || email,
+            token: token_storage
+          },
+          success: function (response) {
+            localStorage.setItem('_id', response._id || "");
+            localStorage.setItem('_email', response.email || "");
+            localStorage.setItem('_token', response.token || "");
+            localStorage.setItem('_expire_date', response.expire_date || "");
+            window.location = "https://go.ainox.pro/in.php?redirect=true&idform=" + data.action + "&e-mail=" + response.email;
+            console.log(response);
+          },
+          error: function (response) {
+            console.log(1)
+            console.log(response);
+          }
+        });
+      }
+      console.log(data)
+    })
+  </script>
 </body>
 
 </html>

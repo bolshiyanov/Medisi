@@ -1,4 +1,3 @@
-
 // Cache references to DOM elements.
 var elms = ['track', 'timer', 'duration', 'playBtn', 'pauseBtn', 'prevBtn', 'nextBtn', 'playlistBtn', 'volumeBtn', 'progress', 'bar', 'wave', 'loading', 'playlist', 'list', 'volume', 'barEmpty', 'barFull', 'sliderBtn'];
 elms.forEach(function(elm) {
@@ -260,19 +259,48 @@ Player.prototype = {
     }
 };
 
-// Trecks for all users.
-var player = new Player([
+// SCRIPT
+const free_tracks = [
     {
         title: 'medisiaudio_1',
         file: 'medisiaudio_1',
         howl: null
-    },
+    }
+]
+const premium_tracks = [
     {
         title: 'medisiaudio_2',
         file: 'medisiaudio_2',
         howl: null
     }
-]);
+]
+const host = "http://localhost:3000";
+var player 
+
+const token_storage = localStorage.getItem('_token');
+if (token_storage){
+    jQuery.ajax({
+        url: host + "/user/get",
+        type: "POST",
+        data: {
+          token: token_storage
+        },
+        success:  (response) => {
+          console.log(response);
+          if (response.expire_date && (new Date(response.expire_date)) >= new Date()){
+            player = new Player(premium_tracks);
+          } else player = new Player(free_tracks);
+        resize();
+        },
+        error: function (response) {
+          console.log(response);
+        }
+      });
+} else {
+    player = new Player(free_tracks); 
+}
+
+// Trecks for all users.
 
 // Trecks for PREMIUM users.
 // var player = new Player([
@@ -384,4 +412,3 @@ var resize = function() {
     }
 };
 window.addEventListener('resize', resize);
-resize();
