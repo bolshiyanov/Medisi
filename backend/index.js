@@ -58,13 +58,13 @@ app.post("/webhook", async (req,res) => {
     if (req.body.Email){
         let expire_date = moment(req.body.date);
         console.log(expire_date.toISOString());
-        if (req.body.itemName == "MediSi Премиум 1 неделя"){
+        if (req.body.itemname == "MediSi Премиум 1 неделя"){
             expire_date.add(1, 'weeks');
-        } else if (req.body.itemName == "MediSi Премиум 1 месяц"){
+        } else if (req.body.itemname == "MediSi Премиум 1 месяц"){
             expire_date.add(1, 'months');
-        } else if (req.body.itemName == "MediSi Премиум 3 месяца"){
+        } else if (req.body.itemname == "MediSi Премиум 3 месяца"){
             expire_date.add(3, 'months');
-        } else if (req.body.itemName == "MediSi Премиум на 1 год"){
+        } else if (req.body.itemname == "MediSi Премиум на 1 год"){
             expire_date.add(1, 'years');
         }
         console.log(expire_date.toISOString());
