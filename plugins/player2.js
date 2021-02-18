@@ -276,7 +276,7 @@ const premium_tracks = [
         howl: null
     }
 ]
-const host = "http://localhost:3000";
+const host = "https://medisi.one";
 var player 
 
 const token_storage = localStorage.getItem('_token');
