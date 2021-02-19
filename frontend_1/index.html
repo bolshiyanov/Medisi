@@ -112,10 +112,10 @@
   <script>
     const host = "https://medisi.one";
     if (localStorage.getItem('_expire_date')) {
-      $('#expire-date').text(localStorage.getItem('_expire_date'))
+      jQuery('#expire-date').text(localStorage.getItem('_expire_date'))
     }
     if (localStorage.getItem('_email')) {
-      $('.email').val(localStorage.getItem('_email'))
+      jQuery('.email').val(localStorage.getItem('_email'))
     }
     jQuery(".subscribe-button").click(function () {
       const token_storage = localStorage.getItem('_token');
