@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Medisi</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app">
+    <div class="app-container">
+      <!-- Хедер -->
+      <div class="header">
+        <div class="header-box">
+          <div class="header-box-logo" style="background-image: URL(images/medisilogo.png)"></div>
+          <div class="header-box-name">MediSi</div>
+        </div>
+      </div>
+      <!-- Карусель медитаций -->
+      <div class="carousel">
+        <div class="carousel-card">
+          <div class="carousel-card-item" onclick="location.href='./player1.html';">
+            <div class="carousel-card-item-image" style="background-image: URL(images/sleep.jpg)"></div>
+            <div class="carousel-card-item-title">Истории</div>
+          </div>
+          <div class="carousel-card-item" onclick="location.href='./player2.html';">
+            <div class="carousel-card-item-image" style="background-image: URL(images/health.jpg)"></div>
+            <div class="carousel-card-item-title">Здоровье</div>
+          </div>
+          <div class="carousel-card-item" onclick="location.href='./player3.html';">
+            <div class="carousel-card-item-image" style="background-image: URL(images/abundance.jpg)"></div>
+            <div class="carousel-card-item-title">Изобилие</div>
+          </div>
+          <div class="carousel-card-item" onclick="location.href='./player4.html';">
+            <div class="carousel-card-item-image" style="background-image: URL(images/relationships.jpg)"></div>
+            <div class="carousel-card-item-title">Любовь</div>
+          </div>
+        </div>
+      </div>
+      <!-- здесь будет ПОПАП а пока поля инпута в хардкоде -->
+      <div class="dev-popup">
+        <h2>Здесь будет попап</h2>
+        <p>Email: <input type="email" name="login" class="email"></p>
+        <p><button type="button" name="show_more" class="login-button">Использовать этот Email</button></p>
+        <h4>Премиум тариф оплачен до: <span id="expire-date">XXX</span></h4>
+        <div style="font-size: 12px; text-align: center; margin-bottom: 15px;">
+          <p style="font-weight:bold; font-size: 14px; margin-bottom: 5px;">Премиум доступ на год:</p> <iframe
+            src="https://yoomoney.ru/quickpay/button-widget?targets=Medisi%20%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%201%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F&default-sum=2&button-text=11&yoomoney-payment-type=on&button-size=s&button-color=orange&mail=on&successURL=https%3A%2F%2Fpro.medisi.one&quickpay=small&account=4100116504283711&"
+            width="127" height="25" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        </div>
+        <div style="font-size: 12px; text-align: center; margin-bottom: 15px;">
+          <p style="font-weight:bold; font-size: 14px; margin-bottom: 5px;">Премиум доступ на квартал:</p> <iframe
+            src="https://yoomoney.ru/quickpay/button-widget?targets=Medisi%20%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%201%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F&default-sum=2&button-text=11&yoomoney-payment-type=on&button-size=s&button-color=orange&mail=on&successURL=https%3A%2F%2Fpro.medisi.one&quickpay=small&account=4100116504283711&"
+            width="127" height="25" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        </div>
+        <div style="font-size: 12px; text-align: center; margin-bottom: 15px;">
+          <p style="font-weight:bold; font-size: 14px; margin-bottom: 5px;">Премиум доступ на месяц:</p> <iframe
+            src="https://yoomoney.ru/quickpay/button-widget?targets=Medisi%20%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%201%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F&default-sum=2&button-text=11&yoomoney-payment-type=on&button-size=s&button-color=orange&mail=on&successURL=https%3A%2F%2Fpro.medisi.one&quickpay=small&account=4100116504283711&"
+            width="127" height="25" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        </div>
+        <div style="font-size: 12px; text-align: center;">
+          <p style="font-weight:bold; font-size: 14px; margin-bottom: 5px;">Премиум доступ на неделю:</p> <iframe
+            src="https://yoomoney.ru/quickpay/button-widget?targets=Medisi%20%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%201%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F&default-sum=2&button-text=11&yoomoney-payment-type=on&button-size=s&button-color=orange&mail=on&successURL=https%3A%2F%2Fpro.medisi.one&quickpay=small&account=4100116504283711&"
+            width="127" height="25" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        </div>
+        </br>
+      </div>
+      <!-- Кнопка пше -->
+      <!-- <div class="subscriptions">
+        <div class="subscriptions-button" onclick="location.href='https://medisi.ainox.pro/#catalog'; target='_blank'; rel='noopener noreferrer'"><SPAN>ВАШИ ПОДПИСКИ</SPAN></div>
+      </div> -->
+      <!-- Карусель коллекций -->
+      <div class="carousel">
+        <div class="carousel-card">
+          <div class="carousel-promo-item">
+            <div class="carousel-card-item-image" style="background-image: URL(images/relationships.jpg)"></div>
+            <div class="carousel-promo-item-title">Сборник медитаций для улучшения отношений</div>
+          </div>
+          <div class="carousel-promo-item">
+            <div class="carousel-card-item-image" style="background-image: URL(images/abundance.jpg)"></div>
+            <div class="carousel-promo-item-title">Сборник медитаций на привличение изобилия</div>
+          </div>
+          <div class="carousel-promo-item">
+            <div class="carousel-card-item-image" style="background-image: URL(images/health.jpg)"></div>
+            <div class="carousel-promo-item-title">Сборник медитаций для оздоровления</div>
+          </div>
+          <!-- <div class="carousel-promo-item">
+            <div class="carousel-card-item-image" style="background-image: URL(images/sleep.jpg); background-position: center;"></div>
+            <div class="carousel-promo-item-title">Сборник медитаций для релакса и сна</div>
+          </div> -->
+        </div>
+      </div>
+      <!-- Заголовок -->
+      <h1>MediSi</h1>
+      <p>Медитация - это путь к новым горизонтам вашего сознания</p>
+      <div id="share"></div>
+      <div id="pwaInstall"></div>
+      <!-- Футер -->
+      <div class="footer">
+        <div class="footer-box">
+          <div class="footer-name">MediSi</div>
+          <div class="footer-pwa">
+            <ion-icon size="large" name="logo-pwa"></ion-icon>
+            <ion-icon name="logo-apple"></ion-icon>
+            <ion-icon name="logo-android"></ion-icon>
+            <ion-icon name="logo-windows"></ion-icon>
+          </div>
+          <div class="footer-sweety">TRY®SWEETY 2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="card-deck" id="promo"></div> -->
+  <script src="plugins/base.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script>
+    const host = "https://medisi.one";
+    if (localStorage.getItem('_token')) {
+      jQuery.ajax({
+        url: host + "/user/get",
+        type: "POST",
+        data: {
+          token: localStorage.getItem('_token')
+        },
+        success: function (response) {
+          localStorage.setItem('_id', response._id || "");
+          localStorage.setItem('_email', response.email || "");
+          localStorage.setItem('_token', response.token || "");
+          localStorage.setItem('_expire_date', response.expire_date || "");
+          console.log(response);
+        },
+        error: function (response) {
+          console.log(1)
+          console.log(response);
+        }
+      });
+    }
+    if (localStorage.getItem('_expire_date')) {
+      jQuery('#expire-date').text(new Date(localStorage.getItem('_expire_date')).toLocaleDateString())
+    }
+    if (localStorage.getItem('_email')) {
+      jQuery('.email').val(localStorage.getItem('_email'))
+    }
+    jQuery(".login").click(function () {
+      const token_storage = localStorage.getItem('_token');
+      const email = jQuery(".email").val();
+      if (email) {
+        jQuery.ajax({
+          url: host + "/user/get",
+          type: "POST",
+          data: {
+            email: email,
+          },
+          success: function (response) {
+            localStorage.setItem('_id', response._id || "");
+            localStorage.setItem('_email', response.email || "");
+            localStorage.setItem('_token', response.token || "");
+            localStorage.setItem('_expire_date', response.expire_date || "");
+            console.log(response);
+          },
+          error: function (response) {
+            console.log(1)
+            console.log(response);
+          }
+        });
+      }
+      console.log(data)
+    })
+  </script>
+</body>
+
+</html>

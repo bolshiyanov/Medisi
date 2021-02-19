@@ -77,6 +77,28 @@ app.post("/webhook", async (req,res) => {
     } else res.json({success: false});
 })
 
+app.post("/yandex/webhook", async (req,res) => {
+    console.log(req.body);
+    if (req.body.email && req.body.label){
+        let expire_date = moment(req.body.datetime);
+        console.log(expire_date.toISOString());
+        if (req.body.itemname == "MediSi Премиум 1 неделя"){
+            expire_date.add(1, 'weeks');
+        } else if (req.body.itemname == "MediSi Премиум 1 месяц"){
+            expire_date.add(1, 'months');
+        } else if (req.body.itemname == "MediSi Премиум 3 месяца"){
+            expire_date.add(3, 'months');
+        } else if (req.body.itemname == "MediSi Премиум на 1 год"){
+            expire_date.add(1, 'years');
+        }
+        console.log(expire_date.toISOString());
+        const user = await db.Users.get_by_email(req.body.email);
+        console.log(user)
+        await db.Users.update({ _id: user._id, setter: { expire_date: expire_date.toISOString() }});
+        res.json({success: true});
+    } else res.json({success: false});
+})
+
 
 app.listen(config.PORT, () => {
 	console.log(`[Express] Server started / PORT: ${config.PORT}`);
