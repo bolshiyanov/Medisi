@@ -117,6 +117,26 @@
     if (localStorage.getItem('_email')) {
       jQuery('.email').val(localStorage.getItem('_email'))
     }
+    if (localStorage.getItem('_token')) {
+      jQuery.ajax({
+        url: host + "/user/get",
+        type: "POST",
+        data: {
+          token: localStorage.getItem('_token')
+        },
+        success: function (response) {
+          localStorage.setItem('_id', response._id || "");
+          localStorage.setItem('_email', response.email || "");
+          localStorage.setItem('_token', response.token || "");
+          localStorage.setItem('_expire_date', response.expire_date || "");
+          console.log(response);
+        },
+        error: function (response) {
+          console.log(1)
+          console.log(response);
+        }
+      });
+    }
     jQuery(".subscribe-button").click(function () {
       const token_storage = localStorage.getItem('_token');
       const email_storage = localStorage.getItem('_email');
