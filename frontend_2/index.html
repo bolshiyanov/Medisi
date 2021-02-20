@@ -217,6 +217,8 @@
     if (localStorage.getItem('_expire_date')) {
       jQuery('#expire-date').text(new Date(localStorage.getItem('_expire_date')).toLocaleDateString())
       jQuery(".date_block").show();
+    } else {
+      jQuery(".buttons_block").show();
     }
     if (localStorage.getItem('_email')) {
       jQuery('.email').val(localStorage.getItem('_email'));
