@@ -135,7 +135,6 @@
           localStorage.setItem('_expire_date', response.expire_date || "");
           console.log(response);
           jQuery(".exit-button").show();
-          jQuery(".buttons_block").show();
           jQuery(".buttons_block-button_unsub").show();
         },
         error: function (response) {
@@ -144,7 +143,7 @@
         }
       });
     }
-    else if (!localStorage.getItem('_token') && new Date(localStorage.getItem('_expire_date')) <= new Date()) {
+    else if (!localStorage.getItem('_token') || new Date(localStorage.getItem('_expire_date')) <= new Date()) {
       jQuery(".buttons_block").show();
       jQuery(".buttons_block-button").show();
       jQuery(".login-button").show();
@@ -152,6 +151,9 @@
     if (localStorage.getItem('_expire_date')) {
       jQuery('#expire-date').text(new Date(localStorage.getItem('_expire_date')).toLocaleDateString())
       jQuery(".date_block").show();
+    } else {
+      jQuery(".buttons_block").show();
+      jQuery(".buttons_block-button").show();
     }
     if (localStorage.getItem('_email')) {
       jQuery('.email').val(localStorage.getItem('_email'))
