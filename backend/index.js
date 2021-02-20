@@ -79,23 +79,30 @@ app.post("/webhook", async (req,res) => {
 
 app.post("/yandex/webhook", async (req,res) => {
     console.log(req.body);
-    if (req.body.email && req.body.label){
-        let expire_date = moment(req.body.datetime);
-        console.log(expire_date.toISOString());
-        if (req.body.itemname == "MediSi Премиум 1 неделя"){
-            expire_date.add(1, 'weeks');
-        } else if (req.body.itemname == "MediSi Премиум 1 месяц"){
-            expire_date.add(1, 'months');
-        } else if (req.body.itemname == "MediSi Премиум 3 месяца"){
-            expire_date.add(3, 'months');
-        } else if (req.body.itemname == "MediSi Премиум на 1 год"){
-            expire_date.add(1, 'years');
+    if (req.body.label && req.body.label != ""){
+        try{
+            const data = JSON.parse(req.body.label);
+            console.log(data);
+            let expire_date = moment(req.body.datetime);
+            console.log(expire_date.toISOString());
+            if (data.label == "MediSi Премиум 1 неделя"){
+                expire_date.add(1, 'weeks');
+            } else if (data.label == "MediSi Премиум 1 месяц"){
+                expire_date.add(1, 'months');
+            } else if (data.label == "MediSi Премиум 3 месяца"){
+                expire_date.add(3, 'months');
+            } else if (data.label == "MediSi Премиум на 1 год"){
+                expire_date.add(1, 'years');
+            }
+            console.log(expire_date.toISOString());
+            const user = await db.Users.get_by_email(data.email);
+            console.log(user)
+            await db.Users.update({ _id: user._id, setter: { expire_date: expire_date.toISOString() }});
+            res.json({success: true});
+        } catch(err){
+            console.log(err);
+            return res.json({success: false})
         }
-        console.log(expire_date.toISOString());
-        const user = await db.Users.get_by_email(req.body.email);
-        console.log(user)
-        await db.Users.update({ _id: user._id, setter: { expire_date: expire_date.toISOString() }});
-        res.json({success: true});
     } else res.json({success: false});
 })
 
