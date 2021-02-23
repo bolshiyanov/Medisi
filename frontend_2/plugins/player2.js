@@ -264,17 +264,48 @@ Player.prototype = {
 // SCRIPT
 const free_tracks = [
     {
-        title: 'medisiaudio_3',
-        file: 'medisiaudio_3',
+        title: 'Восстановление здоровья, демо',
+        file: 'medisidemo_1',
+        howl: null
+    },
+    {
+        title: 'Утренняя медитация, демо',
+        file: 'medisidemo_4',
+        howl: null
+    },
+    {
+        title: 'Женское здоровье, демо',
+        file: 'medisidemo_8',
+        howl: null
+    },
+    {
+        title: 'СПА расслабление, демо',
+        file: 'medisidemo_6', 
         howl: null
     }
 ]
 const premium_tracks = [
     {
-        title: 'medisiaudio_4',
+        title: 'Восстановление здоровья',
+        file: 'medisiaudio_1',
+        howl: null
+    },
+    {
+        title: 'Утренняя медитация',
         file: 'medisiaudio_4',
         howl: null
+    },
+    {
+        title: 'Женское здоровье',
+        file: 'medisiaudio_8',
+        howl: null
+    },
+    {
+        title: 'СПА расслабление',
+        file: 'medisiaudio_6',
+        howl: null
     }
+
 ]
 const host = "https://medisi.one";
 var player 

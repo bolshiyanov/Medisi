@@ -265,22 +265,28 @@ Player.prototype = {
 // SCRIPT
 const free_tracks = [
     {
-        title: 'medisiaudio_7',
-        file: 'medisiaudio_7',
+        title: 'Наполнение любовью, демо',
+        file: 'medisidemo_10',
+        howl: null
+    },
+    {
+        title: 'Вселенская любовь, демо',
+        file: 'medisidemo_11', 
         howl: null
     }
 ]
 const premium_tracks = [
     {
-        title: 'medisiaudio_8',
-        file: 'medisiaudio_8',
+        title: 'Наполнение любовью',
+        file: 'medisiaudio_10',
         howl: null
     },
     {
-        title: 'medisiaudio_9',
-        file: 'medisiaudio_9',
+        title: 'Вселенская любовь',
+        file: 'medisiaudio_11',
         howl: null
     }
+    
 ]
 const host = "https://medisi.one";
 var player 

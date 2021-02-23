@@ -57,7 +57,7 @@ Player.prototype = {
                     // Start the wave animation if we have already loaded
                     wave.container.style.display = 'block';
                     bar.style.display = 'none';
-                    pauseBtn.style.display = 'block';
+                    pauseBtn.style.display = 'block'; 
                 },
                 onload: function() {
                     // Start the wave animation.
@@ -262,15 +262,25 @@ Player.prototype = {
 // SCRIPT
 const free_tracks = [
     {
-        title: 'medisiaudio_1',
-        file: 'medisiaudio_1',
+        title: 'История о лягушках, демо',
+        file: 'medisidemo_12',
+        howl: null
+    },
+    {
+        title: 'История о короле и змее, демо',
+        file: 'medisidemo_13',
         howl: null
     }
 ]
 const premium_tracks = [
     {
-        title: 'medisiaudio_2',
-        file: 'medisiaudio_2',
+        title: 'История о лягушках',
+        file: 'medisiaudio_12',
+        howl: null
+    },
+    {
+        title: 'История о короле и змее',
+        file: 'medisiaudio_13',
         howl: null
     }
 ]

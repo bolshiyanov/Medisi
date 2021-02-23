@@ -263,15 +263,45 @@ Player.prototype = {
 // SCRIPT
 const free_tracks = [
     {
-        title: 'medisiaudio_5',
-        file: 'medisiaudio_5',
+        title: 'Открытие богатства, демо',
+        file: 'medisidemo_2',
+        howl: null
+    },
+    {
+        title: 'Оживление мечты, демо', 
+        file: 'medisidemo_3',
+        howl: null
+    },
+    {
+        title: 'Уверенность в себе, демо',
+        file: 'medisidemo_7',
+        howl: null
+    },
+    {
+        title: 'Установка на успех, демо',
+        file: 'medisidemo_9',
         howl: null
     }
 ]
 const premium_tracks = [
     {
-        title: 'medisiaudio_6',
-        file: 'medisiaudio_6',
+        title: 'Открытие богатства',
+        file: 'medisiaudio_2',
+        howl: null
+    },
+    {
+        title: 'Оживление мечты',
+        file: 'medisiaudio_3',
+        howl: null
+    },
+    {
+        title: 'Уверенность в себе',
+        file: 'medisiaudio_7',
+        howl: null
+    },
+    {
+        title: 'Установка на успех',
+        file: 'medisiaudio_9',
         howl: null
     }
 ]
