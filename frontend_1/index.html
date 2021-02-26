@@ -3,7 +3,16 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <meta name="description"
+    content="Приложение для прослушивания медитаций MEDISI для улучшения сна и привличения денег" />
+  <meta name="theme-color" content="#4F9CBB" />
+
+  <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Medisi" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel='manifest' href='manifest.json'>
   <link rel="icon" href="favicon.ico" />
   <title>Medisi</title>
@@ -435,11 +444,10 @@
     </div>
   </div>
   <!-- <div class="card-deck" id="promo"></div> -->
-  <script type="module">
-    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+  <script type="module" src="pwabuilder-sw.js"></script>
 
-    const el = document.createElement('pwa-update');
-    document.body.appendChild(el);
+  <script>
+    navigator.serviceWorker.register("pwabuilder-sw.js");
   </script>
   <script src="plugins/base.js"></script>
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
