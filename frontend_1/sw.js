@@ -1,7 +1,11 @@
 //remember to increment the version # when you update the service worker
 const version = "1.00",
     preCache = "PRECACHE-" + version,
-    cacheList = [ "/" ];
+    cacheList = [ 
+      "/",
+      "index.html",
+      "css/index.css"
+   ];
 
 /*
 create a list (array) of urls to pre-cache for your application
