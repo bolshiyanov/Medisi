@@ -52,7 +52,7 @@
 	var platform = {},
 		defaultPrompt = {
 			title: "Install this PWA?",
-			src: "https://medisi.one/logo50.png",
+			src: "imgs/pwa-logo-50x50.png",
 			cancelMsg: "Not Now",
 			installMsg: "Install"
 		};
