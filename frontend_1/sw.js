@@ -1,78 +1,36 @@
-//This is the service worker with the Advanced caching
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
+
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 
-
-const HTML_CACHE = "html";
-const JS_CACHE = "javascript";
-const STYLE_CACHE = "stylesheets";
-const IMAGE_CACHE = "images";
-const FONT_CACHE = "fonts";
-
-!function(){"use strict";try{self["workbox:sw:5.1.2"]&&_()}catch(t){}const t={backgroundSync:"background-sync",broadcastUpdate:"broadcast-update",cacheableResponse:"cacheable-response",core:"core",expiration:"expiration",googleAnalytics:"offline-ga",navigationPreload:"navigation-preload",precaching:"precaching",rangeRequests:"range-requests",routing:"routing",strategies:"strategies",streams:"streams"};self.workbox=new class{constructor(){return this.v={},this.t={debug:"localhost"===self.location.hostname,modulePathPrefix:null,modulePathCb:null},this.s=this.t.debug?"dev":"prod",this.o=!1,new Proxy(this,{get(e,s){if(e[s])return e[s];const o=t[s];return o&&e.loadModule(`workbox-${o}`),e[s]}})}setConfig(t={}){if(this.o)throw new Error("Config must be set before accessing workbox.* modules");Object.assign(this.t,t),this.s=this.t.debug?"dev":"prod"}loadModule(t){const e=this.i(t);try{importScripts(e),this.o=!0}catch(s){throw console.error(`Unable to import module '${t}' from '${e}'.`),s}}i(t){if(this.t.modulePathCb)return this.t.modulePathCb(t,this.t.debug);let e=["https://storage.googleapis.com/workbox-cdn/releases/5.1.2"];const s=`${t}.${this.s}.js`,o=this.t.modulePathPrefix;return o&&(e=o.split("/"),""===e[e.length-1]&&e.splice(e.length-1,1)),e.push(s),e.join("/")}}}();
-//# sourceMappingURL=workbox-sw.js.map
-
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
 
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'document',
-  new workbox.strategies.NetworkFirst({
-    cacheName: HTML_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 10,
-      }),
-    ],
-  })
-);
+workbox.core.clientsClaim();
 
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'script',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: JS_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-      }),
-    ],
-  })
-);
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'style',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: STYLE_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-      }),
-    ],
-  })
-);
-
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'image',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: IMAGE_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-      }),
-    ],
-  })
-);
-
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'font',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: FONT_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-      }),
-    ],
-  })
-);
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/index.html"), {
+  
+  blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
+});
