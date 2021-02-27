@@ -54,6 +54,22 @@
 
     <meta name="generator" content="PWA Starter">
     <script src="sw.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+
+          navigator.serviceWorker.register("/sw.js")
+              .then(function (registration) { // Registration was successful
+
+                  console.log("ServiceWorker registration successful with scope: ", registration.scope);
+
+              }).catch(function (err) { // registration failed :(
+
+                  console.log("ServiceWorker registration failed: ", err);
+
+              });
+
+      }
+  </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
@@ -747,22 +763,7 @@
 
         </div>
     </div>
-    <script>
-        if ("serviceWorker" in navigator) {
-
-            navigator.serviceWorker.register("/sw.js")
-                .then(function (registration) { // Registration was successful
-
-                    console.log("ServiceWorker registration successful with scope: ", registration.scope);
-
-                }).catch(function (err) { // registration failed :(
-
-                    console.log("ServiceWorker registration failed: ", err);
-
-                });
-
-        }
-    </script>
+    
 </body>
 
 </html>
