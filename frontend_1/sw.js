@@ -19,7 +19,6 @@ const assets = [
   'images/health.jpg',
   'images/relationships.jpg',
   'images/sleep.jpg',
-  'images/sleep.jpg',
   'images/medisilogo.png'
 ];
 
