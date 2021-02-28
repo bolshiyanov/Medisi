@@ -7,6 +7,9 @@ const assets = [
   'plugins/core.js',
   'plugins/siriwave.js',
   'plugins/player1.js',
+  'plugins/player2.js',
+  'plugins/player3.js',
+  'plugins/player4.js',
   'css/index.css',
   'css/styles.css',
   'player1.html',
@@ -19,7 +22,8 @@ const assets = [
   'images/health.jpg',
   'images/relationships.jpg',
   'images/sleep.jpg',
-  'images/medisilogo.png'
+  'images/medisilogo.png',
+  'favicon.png'
 ];
 
 // cache size limit function
