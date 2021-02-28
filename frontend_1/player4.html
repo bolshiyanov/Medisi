@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link rel="icon" href="favicon.png" />
-    <title>MediSi Изобилие</title>
-    <meta name="description" content="Приложение для медитаций на изобилие">
+    <title>MediSi Отношения</title>
+    <meta name="description" content="Приложение для медитаций на любовь">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
@@ -24,6 +24,7 @@
         <div id="timer">0:00</div>
         <div id="duration">0:00</div>
     </div>
+
     <!-- Controls -->
     <div class="controlsOuter">
         <div class="controlsInner">
@@ -47,6 +48,9 @@
         <div id="list"></div>
     </div>
 
+    <!-- Close -->
+    <div onclick="location.href='./index.html';" class="close">&times;</div>
+
     <!-- Volume -->
     <div id="volume" class="fadeout">
         <div id="barFull" class="bar"></div>
@@ -54,14 +58,11 @@
         <div id="sliderBtn"></div>
     </div>
 
-    <!-- Close -->
-    <div onclick="location.href='./index.html';" class="close">&times;</div>
-
     <!-- Scripts -->
     <!-- <script src="app.js"></script> -->
     <script src="plugins/core.js"></script>
     <script src="plugins/siriwave.js"></script>
-    <script src="plugins/player3.js"></script>
+    <script src="plugins/player4.js"></script>
 </body>
 
 </html>
