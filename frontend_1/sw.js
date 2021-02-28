@@ -4,8 +4,16 @@ const assets = [
   '/',
   'index.html',
   'app.js',
+  'plugins/core.js',
+  'plugins/siriwave.js',
+  'plugins/player1.js',
   'css/index.css',
   'css/styles.css',
+  'player1.html',
+  'player2.html',
+  'player3.html',
+  'player4.html',
+  'fallback.html',
   'logo50.png',
   'images/abundance.jpg',
   'images/health.jpg',
@@ -66,7 +74,7 @@ self.addEventListener('fetch', evt => {
         });
       }).catch(() => {
         if(evt.request.url.indexOf('.html') > -1){
-          return caches.match('pages/fallback.html');
+          return caches.match('fallback.html');
         } 
       })
     );
