@@ -26,7 +26,11 @@ const assets = [
   'favicon.png',
   'meta/favicon-16x16.png',
   'meta/favicon-32x32.png',
-  'meta/favicon-96x96.png'
+  'meta/favicon-96x96.png',
+  'medisiaudio_12.mp3',
+  'medisiaudio_12.webm',
+  'medisiaudio_13.webm',
+  'medisiaudio_13.webm'
 ];
 
 // cache size limit function
