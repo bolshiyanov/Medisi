@@ -1,89 +1,73 @@
-const staticCacheName = 'site-static-v4';
-const dynamicCacheName = 'site-dynamic-v4';
-const assets = [
-  '/',
-  'index.html',
-  'app.js',
-  'plugins/core.js',
-  'plugins/siriwave.js',
-  'plugins/player1.js',
-  'plugins/player2.js',
-  'plugins/player3.js',
-  'plugins/player4.js',
-  'linkCopy.js',
-  'css/index.css',
-  'css/styles.css',
-  'player1.html',
-  'player2.html',
-  'player3.html',
-  'player4.html',
-  'fallback.html',
-  'logo50.png',
-  'images/abundance.jpg',
-  'images/health.jpg',
-  'images/relationships.jpg',
-  'images/sleep.jpg',
-  'images/medisilogo.png',
-  'favicon.png',
-  'meta/favicon-16x16.png',
-  'meta/favicon-32x32.png',
-  'meta/favicon-96x96.png'
-];
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-// cache size limit function
-const limitCacheSize = (name, size) => {
-  caches.open(name).then(cache => {
-    cache.keys().then(keys => {
-      if(keys.length > size){
-        cache.delete(keys[0]).then(limitCacheSize(name, size));
-      }
-    });
-  });
-};
+const HTML_CACHE = "html";
+const JS_CACHE = "javascript";
+const STYLE_CACHE = "stylesheets";
+const IMAGE_CACHE = "images";
+const FONT_CACHE = "fonts";
 
-// install event
-self.addEventListener('install', evt => {
-  console.log('service worker installed');
-  evt.waitUntil(
-    caches.open(staticCacheName).then((cache) => {
-      console.log('caching shell assets');
-      cache.addAll(assets);
-    })
-  );
-});
-
-// activate event
-self.addEventListener('activate', evt => {
-  console.log('service worker activated');
-  evt.waitUntil(
-    caches.keys().then(keys => {
-      console.log(keys);
-      return Promise.all(keys
-        .filter(key => key !== staticCacheName && key !== dynamicCacheName)
-        .map(key => caches.delete(key))
-      );
-    })
-  );
-});
-
-// fetch events
-self.addEventListener('fetch', evt => {
-  if(evt.request.url.indexOf('admin@cluster0.milmt.mongodb.net') === -1){
-    evt.respondWith(
-      caches.match(evt.request).then(cacheRes => {
-        return cacheRes || fetch(evt.request).then(fetchRes => {
-          return caches.open(dynamicCacheName).then(cache => {
-            cache.put(evt.request.url, fetchRes.clone());
-            // check cached items size
-            limitCacheSize(dynamicCacheName, 2);
-            return fetchRes;
-          })
-        });
-      }).catch(() => {
-        if(evt.request.url.indexOf('.html') > -1){
-          return caches.match('fallback.html');
-        } 
-      })
-    );
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
   }
 });
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'document',
+  new workbox.strategies.NetworkFirst({
+    cacheName: HTML_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 10,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'script',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: JS_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 15,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'style',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: STYLE_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 15,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'image',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: IMAGE_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 15,
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'font',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: FONT_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 15,
+      }),
+    ],
+  })
+);
