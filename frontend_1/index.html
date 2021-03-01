@@ -99,7 +99,11 @@
 
       <!-- Кнопка подписки -->
       <div class="box-button-subscriptions">
-        <pwa-install openmodal=true ></pwa-install>
+        <script async defer>
+          var installComponent = document.createElement("pwa-install");
+          document.body.appendChild(installComponent);
+          installComponent.getInstalledStatus();
+        </script>
         <a href="#popupwindows" class="button-subscriptions">WINDOWS</a>
         <div class="botton-subscribtions-descriotions">Нажмите, чтобы установить приложение на WINDOWS</div>
         <a href="#popupandroid" class="button-subscriptions">ANDROID</a>
