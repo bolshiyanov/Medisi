@@ -42,7 +42,7 @@
   <link href="/meta/ios/apple-touch-startup-image-1242x2208.png"
     media="(device-width: 414px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
 
-  <meta name="msapplication-starturl" content="https://medisi.one/">
+    <meta name="msapplication-starturl" content="https://www.medisi.one/">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="favicon.png" rel="shortcut icon">
@@ -93,6 +93,9 @@
           </div>
         </div>
       </div>
+
+      <!-- Кнопка Установить PWA -->
+      <pwa-install manifestpath="manifest.json"></pwa-install>
 
       <!-- Кнопка подписки -->
       <div class="box-button-subscriptions">
@@ -712,7 +715,12 @@
       </div> 
     </div>
   </div> -->
-  <script src="app.js"></script>
+  <script src="app.js">
+    
+  </script>
+  script type="module">
+    import './pwa-install.js';
+  </script>
   <script src="linkCopy.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 
