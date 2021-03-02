@@ -53,8 +53,10 @@
   <meta name="theme-color" content="#000000">
 
   <link rel="manifest" href="manifest.json">
-  <script src="./pwa-install.js"></script>
-   
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
+  ></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous">
@@ -96,7 +98,7 @@
       </div>
 
       <!-- Кнопка Установить PWA -->
-      <pwa-install manifestpath="manifest.json"></pwa-install>
+      <pwa-install></pwa-install>
 
       <!-- Кнопка подписки -->
       <div class="box-button-subscriptions">
@@ -139,9 +141,7 @@
       <!-- Заголовок -->
       <h1>Medisi</h1>
       <p>Медитация - это путь к новым горизонтам вашего сознания</p>
-      <div id="share"></div>
-      <div id="pwaInstall"></div>
-      <!-- Футер -->
+      
       <div class="footer">
         <div class="footer-box">
           <div class="footer-name">MediSi</div>
