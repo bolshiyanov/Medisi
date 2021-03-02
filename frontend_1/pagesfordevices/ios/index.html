@@ -52,6 +52,7 @@
 
   <meta name="theme-color" content="#000000">
 
+  <link rel="manifest" href="./manifest.json">
   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
@@ -137,7 +138,7 @@
             <ion-icon name="logo-android"></ion-icon>
             <ion-icon name="logo-windows"></ion-icon>
           </div>
-          <div class="footer-sweety">TRY®SWEETY 2021v46</div>
+          <div class="footer-sweety">TRY®SWEETY 2021v47</div>
         </div>
       </div>
     </div>
@@ -624,6 +625,12 @@
       </div> 
     </div>
   </div>
+  <!-- Скрипт SERVICEWORKER -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 
   <script>
