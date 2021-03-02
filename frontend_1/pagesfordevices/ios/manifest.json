@@ -1,9 +1,8 @@
 {
-    "start_url":"https://www.medisi.one/pagesfordevices/android/",
+    "start_url":"https://www.medisi.one/pagesfordevices/ios/",
     "scope":"/",
     "display":"standalone",
     "orientation":"any",
-    "serviceworker":{"src":"sw.js","scope":"/"},
     "name":"Medisi",
     "short_name":"Medisi",
     "dir":"auto",
@@ -11,7 +10,7 @@
     "theme_color":"#ffffff",
     "related_applications":[],
     "prefer_related_applications":false,
-    "url":"https://www.medisi.one/pagesfordevices/android/",
+    "url":"https://www.medisi.one/pagesfordevices/ios/",
     "categories":["health"],"description":"Приложение для медитаций",
     "features": [
      "Авторские медитации Инны Спициной",
