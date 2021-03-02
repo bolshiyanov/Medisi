@@ -489,6 +489,13 @@ p {
     margin-top: -12px;
 }
 
+.pwa-box {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 100%;
+}
+
 .js-copy-target {
     width: 100%;
     box-sizing: border-box;
