@@ -148,7 +148,7 @@
             <ion-icon name="logo-android"></ion-icon>
             <ion-icon name="logo-windows"></ion-icon>
           </div>
-          <div class="footer-sweety">TRY®SWEETY 2021 v.2.4.17</div>
+          <div class="footer-sweety">TRY®SWEETY 2021 v.2.4.19</div>
         </div>
       </div>
     </div>
@@ -712,8 +712,9 @@
   </div> 
   <script src="app.js"></script>
   <script async defer>
-    const ref = document.getElementById("installComponent);
-    red.getInstalledStatus();
+    var installComponent = document.createElement("pwa-install");
+    document.body.appendChild(installComponent);
+    installComponent.getInstalledStatus();
   </script>
   <script src="linkCopy.js"></script>
 
