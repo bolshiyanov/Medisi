@@ -110,7 +110,7 @@ input {
 
 .popup-content{
     background-color: #fff;
-    margin-right: 18px;
+    margin-right: 6px;
     color: #000;
     max-width: 600px;
     padding: 18px;
@@ -483,6 +483,10 @@ p {
     font-size: 18px;
     font-weight: 400;
     color: rgb(229, 209, 135);
+}
+
+.divice-link {
+    margin-top: -12px;
 }
 
 .js-copy-target {
