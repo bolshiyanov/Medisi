@@ -492,7 +492,7 @@ p {
     margin-top: -12px;
 }
 
-.install-box-for-pwa {
+.install-box-pwa {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -503,6 +503,14 @@ p {
 
 .install-box-for-pwaios {
     flex-grow: 1;
+}
+
+.install-box-for-pwa {
+    position: fixed;
+    top: 4px;
+    left: 4px;
+    width: 150px;
+    height: 50px;
 }
 
 
