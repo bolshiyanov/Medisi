@@ -497,8 +497,14 @@ p {
     left: 2px;
     width: 150px;
     height: 50px;
-    
 }
+
+.install-box-for-pwaios {
+    position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 .js-copy-target {
     width: 100%;
