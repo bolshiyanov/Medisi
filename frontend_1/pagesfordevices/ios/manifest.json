@@ -70,8 +70,8 @@
             "type":"image/png","sizes":"50x50"}],
             "screenshots":
             [{
-                "src":"logospwa/screenshot_1_1280_800.png","sizes":"1280x800","type":"image/png"},
-                {"src":"logospwa/screenshot_1_750_1334.png","sizes":"750x1334","type":"image/png"},
-                {"src":"logospwa/screenshot_2_1280_800.png","sizes":"1280x800","type":"image/png"},
-                {"src":"logospwa/screenshot_2_750_1334.png","sizes":"750x1334","type":"image/png"}]
+                "src":"meta/screenshot_1_1280_800.png","sizes":"1280x800","type":"image/png"},
+                {"src":"meta/screenshot_1_750_1334.png","sizes":"750x1334","type":"image/png"},
+                {"src":"meta/screenshot_2_1280_800.png","sizes":"1280x800","type":"image/png"},
+                {"src":"meta/screenshot_2_750_1334.png","sizes":"750x1334","type":"image/png"}]
             }
