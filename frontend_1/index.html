@@ -51,8 +51,29 @@
   <link rel="icon" type="image/png" href="meta/favicon-96x96.png" sizes="96x96">
 
   <meta name="theme-color" content="#000000">
-
+  
   <link rel="manifest" href="manifest.json">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous">
+    </script>
+
+<meta name="google-site-verification" content="4m0zLNDP4_6y1JbCA-qx3XgUqTeICzEu6rK0WHQAKOI" />
+<meta name="yandex-verification" content="00959abf91ae287b" />
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(73386829, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/73386829" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -69,10 +90,6 @@
       <!-- Карусель медитаций -->
       <div class="carousel">
         <div class="carousel-card">
-          <div class="carousel-card-item" onclick="location.href='./player1.html';">
-            <div class="carousel-card-item-image" style="background-image: URL(images/sleep.jpg)"></div>
-            <div class="carousel-card-item-title">Истории</div>
-          </div>
           <div class="carousel-card-item" onclick="location.href='./player2.html';">
             <div class="carousel-card-item-image" style="background-image: URL(images/health.jpg)"></div>
             <div class="carousel-card-item-title">Здоровье</div>
@@ -86,18 +103,15 @@
             </div>
             <div class="carousel-card-item-title">Любовь</div>
           </div>
+          <div class="carousel-card-item" onclick="location.href='./player1.html';">
+            <div class="carousel-card-item-image" style="background-image: URL(images/sleep.jpg)"></div>
+            <div class="carousel-card-item-title">Истории</div>
+          </div>
         </div>
       </div>
-
-      <!-- Кнопки установки -->
+      <!-- Кнопка подписки -->
       <div class="box-button-subscriptions">
-        <a href="#popupwindows" class="button-subscriptions">WIN & MAC</a>
-        <div class="botton-subscribtions-descriotions">Нажмите, чтобы установить приложение на WINDOWS или MACBOOK</div>
-        <a href="#popupandroid" class="button-subscriptions">ANDROID</a>
-        <div class="botton-subscribtions-descriotions">Нажмите, чтобы установить приложение на ANDROID</div>
-        <a href="#popupios" class="button-subscriptions">IOS</a>
-        <div class="botton-subscribtions-descriotions">Нажмите, чтобы установить приложение на IPHONE</div>
-
+        <a href="#popup" class="button-subscriptions">ВАШИ ПОДПИСКИ</a>
       </div>
       <!-- Карусель коллекций -->
       <div class="carousel">
@@ -120,57 +134,30 @@
       <!-- Заголовок -->
       <h1>Medisi</h1>
       <p>Медитация - это путь к новым горизонтам вашего сознания</p>
-      <div class="botton-subscribtions-descriotions">Установите наше приложение для доступа ко всем возможностям, регистрироваться не нужно, кредитная карта не потребуется</div>
-      <br/>
-
+      <div class="botton-subscribtions-descriotions">Установите наше приложение для доступа ко всем возможностям,
+        регистрироваться не нужно, кредитная карта не потребуется</div>
+      <br />
+      <!-- Подвал -->
       <div class="footer">
         <div class="footer-box">
           <div class="footer-name">MediSi</div>
           <div class="footer-pwa">
-            <ion-icon size="large" name="logo-pwa"></ion-icon>
-            <ion-icon name="logo-apple"></ion-icon>
-            <ion-icon name="logo-android"></ion-icon>
-            <ion-icon name="logo-windows"></ion-icon>
+            <!-- <ion-icon size="large" name="logo-pwa"></ion-icon> -->
+            <a href="#popupios" style="color: rgb(229, 209, 135)">
+              <ion-icon name="logo-apple"></ion-icon>
+            </a>
+            <a href="#popupandroid" style="color: rgb(229, 209, 135)">
+              <ion-icon name="logo-android"></ion-icon>
+            </a>
+            <ion-icon onclick="location.href='https://www.medisi.one/pagesfordevices/windows/'" name="logo-windows">
+            </ion-icon>
           </div>
-          <div class="footer-sweety">TRY®SWEETY 2021</div>
+          <div class="footer-sweety">НАЖМИТЕ НА ИКОНКУ ЧТОБЫ УСТАНОВИТЬ </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!--  ПОПАП УСТАНОВКИ WINDOWS -->
-  <div id="popupwindows" class="popup">
-    <a href="#header" class="popup-area"></a>
-    <div class="popup-body">
-      <div class="popup-content">
-        <a href="#header" class="popup-close">
-          <ion-icon size="large" name="close-circle-outline"></ion-icon>
-        </a>
-        <h3>УСТАНОВИТЕ ПРИЛОЖЕНИЕ НА СВОЙ <b>WINDOWS или MAC КОМПЬЮТЕР</b>, ЧТОБЫ ПОЛУЧИТЬ ДОСТУП К ПОЛНОЙ КОЛЛЕКЦИИ
-        </h3>
-
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 1: СКОПИРУЙТЕ ЭТУ ССЫЛКУ</p>
-        <div readonly class="js-copy-target">https://www.medisi.one/pagesfordevices/windows/</div>
-        <div class="input-email-descriptions">Приложение будет установлено через ваш браузер CHROME, YANDEX и др. Наше
-          приложение окажется на рабочем столе вашего компьютера уже через несколько секунд.
-          Регистрация и кредитная карта не потребуется. Если вы сейчас находитесь в браузере CHROME или YANDEX нажмите
-          эту ссылку, затем кнопку УСТАНОВИТЬ.</div>
-        <div class="divice-link"><a href="https://www.medisi.one/pagesfordevices/windows/"
-            style="font-size: 12px; color:rgb(23, 23, 196)" target="_self">УСТАНОВИТЬ НА WINDOWS</a></div>
-        <button class="js-copy-btn copy-button">СКОПИРОВАТЬ</button>
-        <div class="input-email-bottomline"></div>
-
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 2: ОТКРОЙТЕ БРАУЗЕР CHROME ИЛИ YANDEX</p>
-        <br />
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 3: ВСТАВЬТЕ ССЫЛКУ В АДРЕСНУЮ СТРОКУ</p>
-        <br />
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 4: НАЖМИТЕ КНОПКУ УСТАНОВИТЬ</p>
-        <br />
-        <div class="input-email-bottomline"></div>
-      </div>
-    </div>
-  </div>
-  </div>
 
   <!--  ПОПАП УСТАНОВКИ ANDROID -->
   <div id="popupandroid" class="popup">
@@ -182,7 +169,8 @@
         </a>
         <h3>УСТАНОВИТЕ ПРИЛОЖЕНИЕ НА СВОЙ <b>ANDROID</b>, ЧТОБЫ ПОЛУЧИТЬ ДОСТУП К ПОЛНОЙ КОЛЛЕКЦИИ</h3>
 
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 1: СКОПИРУЙТЕ ЭТУ ССЫЛКУ</p>
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 1: СКОПИРУЙТЕ ЭТУ
+          ССЫЛКУ</p>
         <div readonly class="js-copy-target">https://www.medisi.one/pagesfordevices/android/</div>
         <div class="input-email-descriptions">Приложение будет установлено через ваш браузер CHROME и окажется на
           рабочем столе вашего устройства уже через несколько секунд.
@@ -194,11 +182,14 @@
 
         <div class="input-email-bottomline"></div>
 
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 2: ОТКРОЙТЕ БРАУЗЕР CHROME</p>
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 2: ОТКРОЙТЕ БРАУЗЕР
+          CHROME</p>
         <br />
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 3: ВСТАВЬТЕ ССЫЛКУ В АДРЕСНУЮ СТРОКУ</p>
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 3: ВСТАВЬТЕ ССЫЛКУ
+          В АДРЕСНУЮ СТРОКУ</p>
         <br />
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 4: НАЖМИТЕ КНОПКУ УСТАНОВИТЬ</p>
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 4: НАЖМИТЕ КНОПКУ
+          УСТАНОВИТЬ</p>
         <br />
         <div class="input-email-bottomline"></div>
       </div>
@@ -216,7 +207,8 @@
         </a>
         <h3>УСТАНОВИТЕ ПРИЛОЖЕНИЕ НА СВОЙ <b>IPHONE</b> ИЛИ <b>IPAD</b>, ЧТОБЫ ПОЛУЧИТЬ ДОСТУП К ПОЛНОЙ КОЛЛЕКЦИИ</h3>
 
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 1: СКОПИРУЙТЕ ЭТУ ССЫЛКУ</p>
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 1: СКОПИРУЙТЕ ЭТУ
+          ССЫЛКУ</p>
         <div readonly class="js-copy-target">https://www.medisi.one/pagesfordevices/ios/</div>
         <div class="input-email-descriptions">Приложение будет установлено через ваш браузер Safari и окажется на
           рабочем столе вашего устройства уже через несколько секунд.
@@ -227,11 +219,14 @@
         <button class="js-copy-btn copy-button">СКОПИРОВАТЬ</button>
         <div class="input-email-bottomline"></div>
 
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 2: ОТКРОЙТЕ БРАУЗЕР SAFARI</p>
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 2: ОТКРОЙТЕ БРАУЗЕР
+          SAFARI</p>
         <br />
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 3: ВСТАВЬТЕ ССЫЛКУ В АДРЕСНУЮ СТРОКУ</p>
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 3: ВСТАВЬТЕ ССЫЛКУ
+          В АДРЕСНУЮ СТРОКУ</p>
         <br />
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 4: ИНСТРУКЦИЯ ВНИЗУ СТРАНИЦЫ</p>
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 4: ИНСТРУКЦИЯ ВНИЗУ
+          СТРАНИЦЫ</p>
         <br />
         <div class="input-email-bottomline"></div>
       </div>
@@ -239,7 +234,7 @@
   </div>
   </div>
 
-  <!--  ПОПАП ВАШИ ПОДПИСКИ -->
+  <!-- здесь будет ПОПАП а пока поля инпута в хардкоде -->
   <div id="popup" class="popup">
     <a href="#header" class="popup-area"></a>
     <div class="popup-body">
@@ -251,7 +246,8 @@
         <h4 style="display: none;" class="date_block">Премиум тариф оплачен до: <br /><br /><span
             id="expire-date">00:00:00</span>
         </h4>
-        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 1: ВВЕДИТЕ E-MAIL
+        <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 1: ВВЕДИТЕ
+          E-MAIL
         </p>
         <input type="email" placeholder="e-mail" name="login" class="email">
         <div class="input-email-descriptions">Сначала введите свой e-mail, а затем выберите подходящий тариф.
@@ -263,7 +259,8 @@
 
 
         <div style="display: none;" class="buttons_block">
-          <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 2: ВЫБЕРИТЕ ТАРИФ
+          <p style="margin: 0px; padding: 0; font-size: 18px; font-weight: 600; text-align: left;">ШАГ 2:
+            ВЫБЕРИТЕ ТАРИФ
           </p>
           <button type="button" name="show_more" class="subscribe-button buttons_block-button" style="display: none;"
             data-option="3a877d9797edf59">Подписка на год</button>
@@ -509,6 +506,9 @@
                 9.1.Вопрсы и предложения по повод настоящей Политики следует сообщать в службу поддержки
                 пользователей –
                 inna42009@yandex.ru
+
+
+
               </div>
             </article>
           </div>
@@ -706,15 +706,16 @@
         <p><button type="button" name="show_more" class="buttons_block-button_unsub" style="display: none;"
             onclick="location.href='https://medisi.ainox.pro/unsubscribe'">Отказаться от подписки</button>
         </p>
-      </div>
+      </div> 
     </div>
   </div>
+
   <script src="app.js"></script>
   <script src="linkCopy.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 
 
-  <!-- <script>
+  <script>
     const host = "https://medisi.one";
     if (localStorage.getItem('_token')) {
       jQuery.ajax({
@@ -816,7 +817,7 @@
       } else alert("Выполните вход");
       console.log(data)
     })
-  </script> -->
+  </script>
   <!-- Здесь загружаем скрипты шрифтов -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap" rel="stylesheet">
