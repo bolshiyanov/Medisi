@@ -51,29 +51,33 @@
   <link rel="icon" type="image/png" href="meta/favicon-96x96.png" sizes="96x96">
 
   <meta name="theme-color" content="#000000">
-  
+
   <link rel="manifest" href="manifest.json">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous">
     </script>
 
-<meta name="google-site-verification" content="4m0zLNDP4_6y1JbCA-qx3XgUqTeICzEu6rK0WHQAKOI" />
-<meta name="yandex-verification" content="00959abf91ae287b" />
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  <meta name="google-site-verification" content="4m0zLNDP4_6y1JbCA-qx3XgUqTeICzEu6rK0WHQAKOI" />
+  <meta name="yandex-verification" content="00959abf91ae287b" />
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-  ym(73386829, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true
-  });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/73386829" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    ym(73386829, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/73386829" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -84,7 +88,9 @@
       <div class="header">
         <div class="header-box">
           <div class="header-box-logo" style="background-image: URL(images/medisilogo.png)"></div>
-          <div class="header-box-name">MediSi</div>
+          <div class="header-box-name">
+            <a href="index.html" target="_self" style="text-decoration: none; color: rgb(229, 209, 135);">MediSi</a>
+          </div>
         </div>
       </div>
       <!-- Карусель медитаций -->
@@ -116,18 +122,61 @@
       <!-- Карусель коллекций -->
       <div class="carousel">
         <div class="carousel-card">
+
           <div class="carousel-promo-item">
-            <div class="carousel-card-item-image" style="background-image: URL(images/relationships.jpg)">
-            </div>
-            <!-- <div class="carousel-promo-item-title">Сборник медитаций для улучшения отношений</div> -->
+            <a href="audioknigi.html" target="_self">
+              <div class="carousel-card-item-image" style="background-image: URL(images/audio-knigi-medisi.jpg)">
+              </div>
+              <div class="carousel-promo-item-title">Аудио книги</div>
+            </a>
+          </div>
+
+          <div class="carousel-promo-item">
+            <a href="muzikadlyameditaciy.html" target="_self">
+              <div class="carousel-card-item-image"
+                style="background-image: URL(images/muzika-dlya-meditacii-medisi.jpg);">
+              </div>
+              <div class="carousel-promo-item-title">Музыка для медитаций</div>
+            </a>
+          </div>
+
+          <div class="carousel-promo-item">
+            <a href="krasivoetelosluboviyu.html" target="_self">
+              <div class="carousel-card-item-image"
+                style="background-image: URL(images/krasivor-telo-s-luboviyu-medisi.jpg)"></div>
+              <div class="carousel-promo-item-title">Красивое тело с любовью</div>
+            </a>
           </div>
           <div class="carousel-promo-item">
-            <div class="carousel-card-item-image" style="background-image: URL(images/abundance.jpg)"></div>
-            <!-- <div class="carousel-promo-item-title">Сборник медитаций на привличение изобилия</div> -->
+            <a href="istorii-medisi.html" target="_self">
+              <div class="carousel-card-item-image"
+                style="background-image: URL(images/istorii.jpg); background-size: cover;"></div>
+              <div class="carousel-promo-item-title">Медитации Истории</div>
+            </a>
           </div>
+
           <div class="carousel-promo-item">
-            <div class="carousel-card-item-image" style="background-image: URL(images/health.jpg)"></div>
-            <!-- <div class="carousel-promo-item-title">Сборник медитаций для оздоровления</div> -->
+            <a href="zdorovie-medisi.html" target="_self">
+              <div class="carousel-card-item-image"
+                style="background-image: URL(images/zdorovie-medisi.jpg); background-size: cover;"></div>
+              <div class="carousel-promo-item-title">Медитации Здровье</div>
+            </a>
+          </div>
+
+          <div class="carousel-promo-item">
+            <a href="izobolie-medisi.html" target="_self">
+              <div class="carousel-card-item-image"
+                style="background-image: URL(images/izobilie-medisi.jpg); background-size: cover;"></div>
+              <div class="carousel-promo-item-title">Медитации Изобилие</div>
+            </a>
+          </div>
+
+          <div class="carousel-promo-item">
+            <a href="lubov-medisi.html" target="_self">
+              <div class="carousel-card-item-image"
+                style="background-image: URL(images/lubov-medisi.jpg); background-size: cover;"></div>
+              <div class="carousel-promo-item-title">Медитации Любовь</div>
+            </a>
           </div>
         </div>
       </div>
@@ -140,7 +189,9 @@
       <!-- Подвал -->
       <div class="footer">
         <div class="footer-box">
-          <div class="footer-name">MediSi</div>
+          <div class="footer-name">
+            <a href="index.html" target="_self" style="text-decoration: none; color: rgb(229, 209, 135);">MediSi</a>
+          </div>
           <div class="footer-pwa">
             <!-- <ion-icon size="large" name="logo-pwa"></ion-icon> -->
             <a href="#popupios" style="color: rgb(229, 209, 135)">
@@ -251,7 +302,9 @@
         </p>
         <input type="email" placeholder="e-mail" name="login" class="email">
         <div class="input-email-descriptions">Сначала введите свой e-mail, а затем выберите подходящий тариф.
-         <b style="color: red;"> Для активации оплаченного тарифа необходимо повторно войти в приложение с тем же e-mail!</b></div>
+          <b style="color: red;"> Для активации оплаченного тарифа необходимо повторно войти в приложение с тем же
+            e-mail!</b>
+        </div>
         <button type="button" name="show_more" class="login-button" style="display: none;">Войти</button>
         <button type="button" name="show_more" class="exit-button" style="display: none;">Выйти</button>
         <div class="input-email-bottomline"></div>
@@ -270,9 +323,9 @@
           <button type="button" name="show_more" class="subscribe-button buttons_block-button" style="display: none;"
             data-option="569abe05dd0e2f9">Подписка на месяц</button>
           <div class="input-email-descriptions">Стоимость подписки на 30 дней составляет 349 рублей</div>
-          <button type="button" name="show_more" class="subscribe-button buttons_block-button" style="display: none;"
+          <!-- <button type="button" name="show_more" class="subscribe-button buttons_block-button" style="display: none;"
             data-option="f07d58538bf14d2">Подписка на неделю</button>
-          <div class="input-email-descriptions">Стоимость подписки на 7 дней составляет 179 рублей</div>
+          <div class="input-email-descriptions">Стоимость подписки на 7 дней составляет 179 рублей</div> -->
           </br>
           <div class="input-email-bottomline"></div>
         </div>
@@ -705,7 +758,7 @@
         <p><button type="button" name="show_more" class="buttons_block-button_unsub" style="display: none;"
             onclick="location.href='https://medisi.ainox.pro/unsubscribe'">Отказаться от подписки</button>
         </p>
-      </div> 
+      </div>
     </div>
   </div>
 

@@ -10,70 +10,71 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles1.css">
     <!-- <link rel="manifest" href="manifest.json"> -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-      
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
         ym(73386829, "init", {
-             clickmap:true,
-             trackLinks:true,
-             accurateTrackBounce:true
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
         });
-      </script>
+    </script>
 </head>
 
 <body>
-
-    <!-- Top Info -->
-    <div class="player-title-box">
-        <div id="title">
-            <span id="track"></span>
+        <!-- Top Info -->
+        <div class="player-title-box">
+            <div id="title">
+                <span id="track"></span>
+            </div>
+            <div id="timer">0:00</div>
+            <div id="duration">0:00</div>
         </div>
-        <div id="timer">0:00</div>
-        <div id="duration">0:00</div>
-    </div>
 
-    <!-- Controls -->
-    <div class="controlsOuter">
-        <div class="controlsInner">
-            <div id="loading"></div>
-            <div class="btn" id="playBtn"></div>
-            <div class="btn" id="pauseBtn"></div>
-            <div class="btn" id="prevBtn"></div>
-            <div class="btn" id="nextBtn"></div>
+        <!-- Controls -->
+        <div class="controlsOuter">
+            <div class="controlsInner">
+                <div id="loading"></div>
+                <div class="btn" id="playBtn"></div>
+                <div class="btn" id="pauseBtn"></div>
+                <div class="btn" id="prevBtn"></div>
+                <div class="btn" id="nextBtn"></div>
+            </div>
+            <div class="btn" id="playlistBtn"></div>
+            <div class="btn" id="volumeBtn"></div>
         </div>
-        <div class="btn" id="playlistBtn"></div>
-        <div class="btn" id="volumeBtn"></div>
-    </div>
 
-    <!-- Progress -->
-    <div id="waveform"></div>
-    <div id="bar"></div>
-    <div id="progress"></div>
+        <!-- Progress -->
+        <div id="waveform"></div>
+        <div id="bar"></div>
+        <div id="progress"></div>
 
-    <!-- Playlist -->
-    <div id="playlist">
-        <div id="list"></div>
-    </div>
+        <!-- Playlist -->
+        <div id="playlist">
+            <div id="list"></div>
+        </div>
 
-    <!-- Volume -->
-    <div id="volume" class="fadeout">
-        <div id="barFull" class="bar"></div>
-        <div id="barEmpty" class="bar"></div>
-        <div id="sliderBtn"></div>
-    </div>
+        <!-- Volume -->
+        <div id="volume" class="fadeout">
+            <div id="barFull" class="bar"></div>
+            <div id="barEmpty" class="bar"></div>
+            <div id="sliderBtn"></div>
+        </div>
 
-    <!-- Close -->
-    <div onclick="location.href='./index.html';" class="close">&times;</div>
+        <!-- Close -->
+        <div onclick="location.href='./index.html';" class="close">&times;</div>
 
-    <!-- Scripts -->
-    <!-- <script src="app.js"></script> -->
-    <script src="plugins/core.js"></script>
-    <script src="plugins/siriwave.js"></script>
-    <script src="plugins/player1.js"></script>
+        <!-- Scripts -->
+        <!-- <script src="app.js"></script> -->
+        <script src="plugins/core.js"></script>
+        <script src="plugins/siriwave.js"></script>
+        <script src="plugins/player1.js"></script>
 </body>
 
 </html>
