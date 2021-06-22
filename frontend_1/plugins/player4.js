@@ -278,6 +278,11 @@ const free_tracks = [
         title: 'Энергия любви, демо',
         file: 'medisidemo_15',
         howl: null
+    },
+    {
+        title: 'Медитация космического роста, демо',
+        file: 'medisidemo_17',
+        howl: null
     }
 ]
 const premium_tracks = [
@@ -294,6 +299,11 @@ const premium_tracks = [
     {
         title: 'Энергия любви',
         file: 'medisiaudio_15',
+        howl: null
+    },
+    {
+        title: 'Медитация космического роста',
+        file: 'medisiaudio_17',
         howl: null
     }
     

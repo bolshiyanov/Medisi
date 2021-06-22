@@ -282,6 +282,11 @@ const free_tracks = [
         title: 'СПА расслабление, демо',
         file: 'medisidemo_6',
         howl: null
+    },
+    {
+        title: 'Освобождение от страхов, демо',
+        file: 'medisidemo_16',
+        howl: null
     }
 ]
 const premium_tracks = [
@@ -303,6 +308,11 @@ const premium_tracks = [
     {
         title: 'СПА расслабление',
         file: 'medisiaudio_6',
+        howl: null
+    },
+    {
+        title: 'Освобождение от страхов',
+        file: 'medisiaudio_16',
         howl: null
     }
 
